@@ -14,7 +14,7 @@ class ResultsList extends Component {
         .hide-scroll-container {
           width: calc(100% - 1.2em - 4px);
           list-style: none;
-          margin: -2em 0 0 0;
+          margin: -2.55em 0 0 0;
           position: absolute;
           left: .6em;
           background: #f2f2f2;
@@ -38,19 +38,43 @@ class ResultsList extends Component {
           overflow: auto;
           height: calc(100% - 24px - 2.4em);
         }
+        .add-to-queue__search-results li {
+          margin: 0 0 1em 0;
+        }
+        .add-to-queue__search-results li:last-child {
+          margin: 0 0 .2em 0;
+        }
         .add-to-queue__search-results-item {
+          transition: .25s ease;
+          border-radius: .5em;
+        }
+        .add-to-queue__search-results-item:hover {
+          background: rgba(0,0,0,.1);
+          cursor: pointer;
+        }
+        .add-to-queue__search-results-item:hover .album-img {
+          box-shadow: 0 .7em 1.2em rgba(0,0,0,.25);
+          opacity: 1;
+          transform: scale(1.08);
         }
         .add-to-queue__search-results-item--focused {
-          background-color: #eee;
+          background-color: #f2f2f2;
         }
         .container{
           display: flex;
         }
         .album-img{
+          opacity: .45;
           width: 65px;
           height: 65px;
+          min-width: 65px;
+          min-height: 65px;
+          max-width: 65px;
+          max-height: 65px;
           overflow: hidden;
           border-radius: .5em;
+          box-shadow: 0 .6em 1em rgba(0,0,0,.35);
+          transition: .25s ease;
         }
         .album-img img{
           width: 100%;
@@ -58,10 +82,31 @@ class ResultsList extends Component {
         }
         .flex-item{
             flex-grow: 1;
+            margin: 0 0 0 .8em;
+            width: calc(100% - 65px - .8em);
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-content: center;
+            transition. .25s ease;
         }
         .song-name {
-          font-size: 1.3em;
-          margin-bottom: 0.3em;
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 0;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: calc(100% - 1em);
+        }
+        .artist-name {
+          opacity: .54;
+          font-size: .825em;
+          margin-bottom: 0;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: calc(100% - 1em);
         }
       `}</style>
         <ul className="add-to-queue__search-results">
@@ -77,7 +122,7 @@ class ResultsList extends Component {
                   </div>
                   <div className="flex-item">
                     <div className="song-name">{r.name}</div>
-                    <div>{r.artists[0].name}</div>
+                    <div className="artist-name">{r.artists[0].name}</div>
                   </div>
                 </div>
               </li>

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { login } from '../actions/sessionActions';
 import { mutePlayback, unmutePlayback } from '../actions/playbackActions';
-import ButtonStyle from './ButtonStyle';
-import ButtonDarkStyle from './ButtonDarkStyle';
 
 const getNameFromUser = user => {
   return user.display_name || user.id;
@@ -21,19 +19,13 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
     <div className="control-section">
       {session.user
         ? <div className="playback-control">
-            <style jsx>
-              {ButtonStyle}
-            </style>
-            <style jsx>
-              {ButtonDarkStyle}
-            </style>
             <style jsx>{`
               .playback-control {
                 margin-right: .5em;
               }
             `}</style>
             <button
-              className="btn btn--dark"
+              className="btn"
               onClick={() => {
                 muted ? unmutePlayback() : mutePlayback();
               }}
@@ -68,14 +60,12 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
               {getNameFromUser(session.user)}
             </div>
           </div>
-        : <button className="btn btn--dark" style={{ float: 'right' }} onClick={login}>
-            <style jsx>{ButtonStyle}</style>
-            <style jsx>{ButtonDarkStyle}</style>
+        : <button className="btn" style={{ float: 'right' }} onClick={login}>
             <FormattedMessage id="login" />
           </button>}
     </div>
 
-    {<style jsx>{`
+    {<style jsx global>{`
       .page-header {
         position: fixed;
         padding: .5rem .8em;
@@ -103,6 +93,31 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
       .control-section {
         display: flex;
         flex-flow: row;
+      }
+      .btn {
+        border: none;
+        border-radius: 5em;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: .8em;
+        padding: .7em 1em;
+        display: flex;
+        background: #092EF2;
+        align-items: center;
+        align-content: center;
+        font-family: 'nunito sans';
+        letter-spacing: .5px;
+        transition: .3s ease;
+      }
+      .btn:hover {
+        box-shadow: 0 0.6em 1em rgba(0,0,0,.25);
+        pointer: cursor;
+        transform: translateY(-2px);
+      }
+      .btn:focus {
+        outline: none;
+        opacity: .8;
       }
     `}</style>}
   </div>

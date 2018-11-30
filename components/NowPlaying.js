@@ -54,13 +54,18 @@ class NowPlaying extends React.PureComponent {
             margin: 0;
           }
           .media__bd {
-            margin-left: .5em;
+            margin: .5em;
             position: absolute;
+            width: calc(100% - 1.1em);
           }
           .media__img {
             position: relative;
             width: 375px;
             height: 375px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
           }
           .gradient {
             position: absolute;
@@ -83,9 +88,26 @@ class NowPlaying extends React.PureComponent {
           }
           .now-playing__track-name {
             font-size: 2em;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .now-playing__artist-name {
             font-size: 1.2em;
+            transform: translateY(-.15em);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .user-suggestion-wrapper {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            margin-top: .5em;
+          }
+          .user-suggestion-wrapper .user-name{
+            margin-left: .3em;
           }
           .now-playing__progress_bar {
             top: 0;
@@ -108,12 +130,12 @@ class NowPlaying extends React.PureComponent {
             <div className="now-playing__artist-name">
               {this.props.track.artists.map(a => a.name).join(', ')}
             </div>
-            <div className="media__img">
+            <div className="user-suggestion-wrapper">
               <img
                 className="user-image"
                 src={
                   (this.props.user.images && this.props.user.images.length && this.props.user.images[0].url) ||
-                    '/static/user.svg'
+                    '/static/user-white.svg'
                 }
                 width="30"
                 height="30"
@@ -121,9 +143,9 @@ class NowPlaying extends React.PureComponent {
                 alt={userName}
                 title={userName}
               />
-            </div>
-            <div className="user-name media__bd">
-              {userName}
+              <div className="user-name">
+                {userName}
+              </div>
             </div>
           </div>
         </div>

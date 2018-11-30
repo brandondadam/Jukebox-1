@@ -35,7 +35,7 @@ class Main extends React.Component {
             <div className="dark-filter"></div>
             <div className="gradient"></div>
             <h1>Hi!</h1>
-            <h1>You're the first one here. Enter a song below to get started.</h1>
+            <h1>You're the first one here. Make sure to sign in to the right. Then enter a song below to get started.</h1>
           </div>}
         <div className="app">
           <style jsx global>
@@ -95,6 +95,9 @@ class Main extends React.Component {
                 width: calc(100% - 375px - 1.8em);
                 margin: 0 .8em 0 auto;
               }
+              .active-user-wrapper {
+                margin-bottom: 3em;
+              }
               ::-webkit-scrollbar {
                 width: .3em;
               }
@@ -112,10 +115,10 @@ class Main extends React.Component {
           </div>
 
           <div className="page-content">
-            <div>
+            <div className="active-user-wrapper">
               <Users items={this.props.users} />
             </div>
-            <div>
+            <div className="available-devices-wrapper">
               {this.props.session.user !== null ? <Devices /> : null}
             </div>
           </div>

@@ -29,7 +29,7 @@ class Devices extends React.PureComponent {
               cursor: pointer;
               font-weight: bold;
               font-size: .8em;
-              padding: .5em .8em;
+              padding: .5em 1em;
               display: flex;
               background: #092EF2;
               align-items: center;
