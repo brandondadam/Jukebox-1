@@ -1,0 +1,12 @@
+{
+  "about": "About",
+  "login": "Log in with Spotify",
+  "online": "Active Users",
+  "queue.title": "Up Next:",
+  "queue.empty": "No songs in the queue.",
+  "queue.add": "Add a song",
+  "devices.title": "Available Devices",
+  "devices.fetch": "Add Device",
+  "devices.transfer": "Change Device",
+  "devices.empty": "No devices available."
+}

@@ -1,0 +1,60 @@
+{
+  "name": "c-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "node server/server.js",
+    "start": "NODE_ENV=production node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analyze": "cross-env ANALYZE=1 next build",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote --print-width 120",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "accepts": "^1.3.4",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.0.5",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "glob": "^7.1.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "module-alias": "^2.0.1",
+    "next": "^7.0.0",
+    "next-redux-wrapper": "^1.3.4",
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
+    "promise-retry": "^1.1.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-intl": "^2.4.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.88.0",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3",
+    "spotify-web-api-node": "^4.0.0",
+    "uuid": "^3.1.0",
+    "webpack-bundle-analyzer": "^2.9.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4"
+  },
+  "engines": {
+    "node": "8.4.x"
+  }
+}
