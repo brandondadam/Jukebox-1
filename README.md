@@ -1,6 +1,6 @@
 # Jukebox-1
 
-This project is a site where multiple users can propose songs and vote for them, having them played in a synchronised way through Spotify. It is a clone of Josè M. Pèreaz's project that has been restyled. [Josè's Project](https://github.com/JMPerez/c).
+This project is a site where multiple users can propose songs, and have them played in a synchronized way through Spotify. It is a clone of Josè M. Pèreaz's project that has been restyled. [Josè's Project](https://github.com/JMPerez/c).
 
 ## Setting up
 
